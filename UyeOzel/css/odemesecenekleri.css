@@ -1,0 +1,169 @@
+﻿@charset "UTF-8";
+/* ######################################################################## */
+/* /////////////////////////////// CSSRESET /////////////////////////////// */
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+:focus {
+	outline: 0;
+}
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+body {
+	font: normal 11px Arial;
+}
+a:focus {
+	outline: 1px dotted;
+}
+hr {
+	border: 0 #ccc solid;
+	border-top-width: 1px;
+	clear: both;
+	height: 0;
+}
+h1 {
+	font-size: 25px;
+}
+h2 {
+	font-size: 23px;
+}
+h3 {
+	font-size: 21px;
+}
+h4 {
+	font-size: 19px;
+}
+h5 {
+	font-size: 17px;
+}
+h6 {
+	font-size: 15px;
+}
+ol {
+	list-style: decimal;
+}
+
+li {
+	margin-left: 30px;
+}
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address {
+	margin: 0px;
+}
+div, ul, li {
+	margin: 0px;
+	padding: 0px;
+}
+/* ######################################################################## */
+
+.ml_5 {
+	margin-left: 5px;
+}
+.ml_10 {
+	margin-left: 10px;
+}
+.mr_5 {
+	margin-right: 5px;
+}
+.mr_10 {
+	margin-right: 10px;
+}
+.mt_5 {
+	margin-top: 5px;
+}
+.mt_10 {
+	margin-top: 10px;
+}
+.mb_5 {
+	margin-bottom: 5px;
+}
+.mb_10 {
+	margin-bottom: 10px;
+}
+.fl {
+	float: left;
+}
+.pa {
+	position: absolute;
+}
+.ha {
+	height: auto;
+	min-height: 10px;
+}
+.ma {
+	margin: 0 auto;
+}
+.cp {
+	cursor: pointer;
+}
+.dnone {
+	display: none;
+}
+/* ///// - Ödeme Adımları */
+.odemesecenegiust {
+	width: 667px;
+	height: 40px;
+	background: #f0f0f0;
+	border-top: #d1d1d1 1px solid;
+	border-left: #d1d1d1 1px solid;
+	border-right: #d1d1d1 1px solid;
+}
+.odemesecenegialt {
+	width: 664px;
+	height: auto;
+	min-height: 40px;
+	padding-bottom: 10px;
+	background: #ffffff;
+	border-bottom: #d1d1d1 1px solid;
+	border-left: #d1d1d1 1px solid;
+	border-right: #d1d1d1 1px solid;
+}
+.osbuton {
+	width: auto;
+	height: 29px;
+	background: #fff;
+	border: #d1d1d1 1px solid;
+	border-bottom: 0px;
+	margin: 10px 0px 0px 5px;
+	padding: 7px 10px 0px 10px;
+	cursor: pointer;
+	font: bold 11px Arial;
+}
+.osbuton2 {
+	color: #999;
+	width: auto;
+	height: 29px;
+	background: #f1f1f1;
+	border: #d1d1d1 1px solid;
+	border-bottom: 0px;
+	margin: 10px 0px 0px 5px;
+	padding: 7px 10px 0px 10px;
+	cursor: pointer;
+	font: bold 11px Arial;
+}
+.ostabArea {
+	width: 660px;
+	margin: 4px;
+}
+.ostabAreaKredi {
+	background: url(../images/credit-bg.png) no-repeat right;
+}

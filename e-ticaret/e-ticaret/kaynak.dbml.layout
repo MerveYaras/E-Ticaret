@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.875" name="kaynak">
+  <DataContextMoniker Name="/kaynakDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0c376e3e-cbe0-4421-b04d-57dce2bef20b" absoluteBounds="0.75, 4.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/kaynakDataContext/Kategori" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f52f0062-5fb1-438e-a194-bc967d1ee986" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9a8f316-9504-4160-9a0e-532c8d3f7803" absoluteBounds="0.75, 7.5, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/kaynakDataContext/tblKullanici" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcae21d6-d946-415e-9487-dbed668f3d42" absoluteBounds="0.765, 7.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a56731a3-ecd8-4655-9335-d7f30f88a780" absoluteBounds="0.75, 1, 2, 1.5785953776041668">
+      <DataClassMoniker Name="/kaynakDataContext/tblMarka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d1e4779-30b8-4d85-93b8-69caedd0ce88" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb71ff44-e518-4043-8ab6-6077bff5c830" absoluteBounds="6.25, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/kaynakDataContext/tblSepet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d857aab8-25e3-4206-8225-f4d67b8ccadb" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7edef56-33c3-4ccb-9518-1cd10c42ab49" absoluteBounds="3.5, 8, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/kaynakDataContext/tblSipari" />
+      <nestedChildShapes>
+        <elementListCompartment Id="546429ae-8b7a-4a05-9267-b329cdf91aa6" absoluteBounds="3.515, 8.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e67df39-2fa0-4f10-beb0-3ea9406e2234" absoluteBounds="6.25, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/kaynakDataContext/tblSiparisDetay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="364666a5-853b-495d-882e-06abd6dac9ef" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb27961e-b4e1-431b-97cf-81e62ffe0645" absoluteBounds="3.5, 2.875, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/kaynakDataContext/Urun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b80e805-a2a8-40ba-843c-1509fc22b049" absoluteBounds="3.515, 3.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 10.3213525390625); (7.25 : 10.3213525390625); (7.25 : 5.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/tblKullanici/tblKullanici_tblSepet" />
+      <nodes>
+        <classShapeMoniker Id="f9a8f316-9504-4160-9a0e-532c8d3f7803" />
+        <classShapeMoniker Id="fb71ff44-e518-4043-8ab6-6077bff5c830" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.98159912109375); (3.5 : 8.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/tblKullanici/tblKullanici_tblSipari" />
+      <nodes>
+        <classShapeMoniker Id="f9a8f316-9504-4160-9a0e-532c8d3f7803" />
+        <classShapeMoniker Id="b7edef56-33c3-4ccb-9518-1cd10c42ab49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8); (5.875 : 7.625); (5.875 : 1.73159912109375); (6.25 : 1.73159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/tblSipari/tblSipari_tblSiparisDetay" />
+      <nodes>
+        <classShapeMoniker Id="b7edef56-33c3-4ccb-9518-1cd10c42ab49" />
+        <classShapeMoniker Id="8e67df39-2fa0-4f10-beb0-3ea9406e2234" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.78929768880208); (5.79166666666667 : 4.78929768880208 : JumpStart); (5.95833333333333 : 4.78929768880208 : JumpEnd); (6.25 : 4.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/Urun/Urun_tblSepet" />
+      <nodes>
+        <classShapeMoniker Id="fb27961e-b4e1-431b-97cf-81e62ffe0645" />
+        <classShapeMoniker Id="fb71ff44-e518-4043-8ab6-6077bff5c830" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 2.875); (4.5 : 2.25365118164062); (5.79166666666667 : 2.25365118164062 : JumpStart); (5.95833333333333 : 2.25365118164062 : JumpEnd); (6.25 : 2.25365118164062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/Urun/Urun_tblSiparisDetay" />
+      <nodes>
+        <classShapeMoniker Id="fb27961e-b4e1-431b-97cf-81e62ffe0645" />
+        <classShapeMoniker Id="8e67df39-2fa0-4f10-beb0-3ea9406e2234" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.62682559082031); (3.9687475 : 1.62682559082031); (3.9687475 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/tblMarka/tblMarka_Urun" />
+      <nodes>
+        <classShapeMoniker Id="a56731a3-ecd8-4655-9335-d7f30f88a780" />
+        <classShapeMoniker Id="fb27961e-b4e1-431b-97cf-81e62ffe0645" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/Kategori/Kategori_Urun" />
+      <nodes>
+        <classShapeMoniker Id="0c376e3e-cbe0-4421-b04d-57dce2bef20b" />
+        <classShapeMoniker Id="fb27961e-b4e1-431b-97cf-81e62ffe0645" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

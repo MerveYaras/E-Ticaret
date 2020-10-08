@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="e-ticaret" Class="kaynakDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=e-ticaret;Integrated Security=True;Pooling=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="e_ticaretConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Kategori" Member="Kategoris">
+    <Type Name="Kategori">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KatAdi" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Association Name="Kategori_Urun" Member="Uruns" ThisKey="Id" OtherKey="KatId" Type="Urun" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblKullanici" Member="tblKullanicis">
+    <Type Name="tblKullanici">
+      <Column Name="kullaniciKod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="adsoyad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="sonGirisTarih" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="sifre" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="sehir" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="adres1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="Char(13)" CanBeNull="true" />
+      <Column Name="puan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dtarih" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cinsiyet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Yonetim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblKullanici_tblSepet" Member="tblSepets" ThisKey="kullaniciKod" OtherKey="kullaniciKod" Type="tblSepet" />
+      <Association Name="tblKullanici_tblSipari" Member="tblSiparis" ThisKey="kullaniciKod" OtherKey="kullaniciKod" Type="tblSipari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMarka" Member="tblMarkas">
+    <Type Name="tblMarka">
+      <Column Name="markaKod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Marka" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MarkaTel" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MarkaResim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblMarka_Urun" Member="Uruns" ThisKey="markaKod" OtherKey="markaKod" Type="Urun" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSepet" Member="tblSepets">
+    <Type Name="tblSepet">
+      <Column Name="kullaniciKod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="urunKod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="adet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblKullanici_tblSepet" Member="tblKullanici" ThisKey="kullaniciKod" OtherKey="kullaniciKod" Type="tblKullanici" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Urun_tblSepet" Member="Urun" ThisKey="urunKod" OtherKey="urunKod" Type="Urun" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSiparis" Member="tblSiparis">
+    <Type Name="tblSipari">
+      <Column Name="faturaKod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="kullaniciKod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToplamTutar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KargoBilgisi" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="siparisTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblSipari_tblSiparisDetay" Member="tblSiparisDetays" ThisKey="faturaKod" OtherKey="faturaKod" Type="tblSiparisDetay" />
+      <Association Name="tblKullanici_tblSipari" Member="tblKullanici" ThisKey="kullaniciKod" OtherKey="kullaniciKod" Type="tblKullanici" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSiparisDetay" Member="tblSiparisDetays">
+    <Type Name="tblSiparisDetay">
+      <Column Name="SatirNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="faturaKod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="urunKod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fiyat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KDV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="adet" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="tblSipari_tblSiparisDetay" Member="tblSipari" ThisKey="faturaKod" OtherKey="faturaKod" Type="tblSipari" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Urun_tblSiparisDetay" Member="Urun" ThisKey="urunKod" OtherKey="urunKod" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Urun" Member="Uruns">
+    <Type Name="Urun">
+      <Column Name="urunKod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="markaKod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="urunAd" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="KatId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="listeFiyat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Indirim" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KDVoran" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="urunResim" Type="System.String" DbType="VarChar(55)" CanBeNull="true" />
+      <Column Name="urunOzet" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="stokDurum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="garanti" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="teslimatSure" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IndirimliMi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Detay" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sil" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Urun_tblSepet" Member="tblSepets" ThisKey="urunKod" OtherKey="urunKod" Type="tblSepet" />
+      <Association Name="Urun_tblSiparisDetay" Member="tblSiparisDetays" ThisKey="urunKod" OtherKey="urunKod" Type="tblSiparisDetay" />
+      <Association Name="tblMarka_Urun" Member="tblMarka" ThisKey="markaKod" OtherKey="markaKod" Type="tblMarka" IsForeignKey="true" />
+      <Association Name="Kategori_Urun" Member="Kategori" ThisKey="KatId" OtherKey="Id" Type="Kategori" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

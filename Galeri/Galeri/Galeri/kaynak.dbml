@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="galeri" Class="kaynakDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=galeri;Integrated Security=True;Pooling=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="galeriConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ResimGaleri" Member="ResimGaleris">
+    <Type Name="ResimGaleri">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Resim" Type="System.String" DbType="VarChar(750)" CanBeNull="true" />
+      <Column Name="KatId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Kategori_ResimGaleri" Member="Kategori" ThisKey="KatId" OtherKey="Id" Type="Kategori" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kategori" Member="Kategoris">
+    <Type Name="Kategori">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KategoriAdi" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="Resim" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Association Name="Kategori_ResimGaleri" Member="ResimGaleris" ThisKey="Id" OtherKey="KatId" Type="ResimGaleri" />
+    </Type>
+  </Table>
+</Database>

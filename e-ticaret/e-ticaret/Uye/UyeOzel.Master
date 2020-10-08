@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UyeOzel.Master.cs" Inherits="e_ticaret.UyeOzel" %>
+
+<html class="no-js">
+<head>
+    <title>Online Bilgisayar Dükkanı</title>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="e-ticaret" />
+    <meta name="description" content="Ayla CEYLAN" />
+    <!-- ie 8 ve alt versiyonları için html5 ile gelen etiketlerin çalışması için -->
+    <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <link href="uyetema/altstil.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../scripts/modernizr-1.7.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="../scripts/eticaret.js"></script>
+    <style type="text/css">
+        .group
+        {
+            margin-left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="masthead">
+            <a href="../Anasayfa.aspx" id="logo">
+                <img src="../images/logo.jpg" alt="Online Bilgisayar" height="56" /></a>
+        </div>
+        <div id="main-nav">
+            <ul class="group">
+                <li class="current"><a href="../Anasayfa.aspx">ANASAYFA</a></li>
+                <li><a href="../Markalar.aspx">MARKALAR</a></li>
+                <li><a href="../Kampanyalarimiz.aspx">KAMPANYALAR</a></li>
+                <li><a href="../Indirimdekiler.aspx">İNDİRİMDEKİLER</a></li>
+                <li><a href="#siparis-ve-odeme">SİPARİŞ VE ÖDEME</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="sidebar">
+            <div class="box">
+                <h3 class="left">
+                    ÜYE İŞLEMLERİ</h3>
+                <ul class="nav" id="kategorihtml" runat="server">
+                    <li><a href="Sepetim.aspx">Sepetim</a></li>
+                    <li><a href="Siparisim.aspx">Siparişlerim</a></li>
+                    <li><a href="Bilgilerim.aspx">Bilgilerim</a></li>
+                    <li><a href="SifreDegistir.aspx">Şifre Değiştir</a></li>
+                    <li>  <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Çıkış Yap</asp:LinkButton></li>
+                  
+                </ul>
+            </div>
+            <div class="box">
+                <h3 class="left">
+                    HAKKIMIZDA</h3>
+                <ul class="nav">
+                    <li><a href="#hakkimizda/urunlerimiz-hakkinda">Ürünlerimiz Hakkında</a></li>
+                    <li><a href="../NasilUyeOlurum.aspx">Site üyelik ve yasal sorumluluklar</a></li>
+                    <li><a href="../UrunIadeHakkinda.aspx">Ürün iade ve satış iptali</a></li>
+                    <li><a href="../Gizlilik.aspx">Gizlilik ve üyelik şartları</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3 class="left">
+                    KAMPANYALAR</h3>
+                <img src="../images/kampanyalar.jpg" />
+            </div>
+        </div>
+        <div id="push" class="group">
+        </div>
+    </div>
+    <div id="mastfoot" class="group">
+        <p id="disclaimer">
+            Bu sayfa en iyi Firefox ile görüntülenir.</p>
+        <p id="copyright">
+            Design By <span class="author">Ayla CEYLAN</span></p>
+    </div>
+    </form>
+</body>
+</html>

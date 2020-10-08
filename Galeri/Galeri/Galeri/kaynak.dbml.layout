@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="kaynak">
+  <DataContextMoniker Name="/kaynakDataContext" />
+  <nestedChildShapes>
+    <classShape Id="beb2c9c9-0ace-4fdf-a92f-8f19e6c95008" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/kaynakDataContext/ResimGaleri" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0c3a409-2fe8-4347-ad6e-ccc28875ab6c" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ef421cc-0e9b-40c6-a357-3d90d52e13d5" absoluteBounds="3.625, 2.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/kaynakDataContext/Kategori" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0c5d480-de0f-4141-9ca0-f65a31bd12e7" absoluteBounds="3.64, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5625 : 2.625); (4.5625 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/kaynakDataContext/Kategori/Kategori_ResimGaleri" />
+      <nodes>
+        <classShapeMoniker Id="7ef421cc-0e9b-40c6-a357-3d90d52e13d5" />
+        <classShapeMoniker Id="beb2c9c9-0ace-4fdf-a92f-8f19e6c95008" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

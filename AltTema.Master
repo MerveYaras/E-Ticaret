@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AltTema.master.cs" Inherits="e_ticaret.AltTema" %>
+
+<html class="no-js">
+<head>
+    <title>Online Bilgisayar Dükkanı</title>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="e-ticaret" />
+    <meta name="description" content="Ayla CEYLAN" />
+    <!-- ie 8 ve alt versiyonları için html5 ile gelen etiketlerin çalışması için -->
+    <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <link href="alttema/altstil.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/modernizr-1.7.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="scripts/eticaret.js"></script>
+    <style type="text/css">
+        .group
+        {
+            margin-left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="masthead">
+            <a href="Anasayfa.aspx" id="logo">
+                <img src="images/logo.jpg" alt="Online Bilgisayar" height="56" /></a>
+           
+        </div>
+        <div id="main-nav">
+            <ul class="group">
+                <li class="current"><a href="Anasayfa.aspx">ANASAYFA</a></li>
+                <li><a href="Markalar.aspx">MARKALAR</a></li>
+                <li><a href="Kampanyalarimiz.aspx">KAMPANYALAR</a></li>
+                <li><a href="Indirimdekiler.aspx">İNDİRİMDEKİLER</a></li>
+                <li><a href="#siparis-ve-odeme">SİPARİŞ VE ÖDEME</a></li>
+            </ul>
+           
+        </div>
+        <div id="content">
+            
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+            
+        </div>
+        <div id="sidebar">
+            <div class="box">
+                <h3 class="left">
+                    ÜRÜN KATEGORİSİ</h3>
+                 <ul class="nav" id="kategorihtml" runat="server">
+                   
+
+                </ul>
+            </div>
+           <div class="box">
+                <h3 class="left">
+                    ÜYE / YÖNETİCİ GİRİŞİ</h3>
+                  <div id="login" runat="server">
+                <ol >
+                    <li class="group">
+                        <label for="email">
+                            Email adresi</label>
+
+                        <input type="text" runat="server" name="email" id="email" />
+                    </li>
+                    <li class="group">
+                        <label for="password">
+                            Şifre</label>
+                        <input type="password" runat="server" name="password" id="password" />
+                    </li>
+                    <li class="group"><a href="#sifremi-unuttum">Şifremi unuttum</a>
+                        <asp:Button ID="Button1" runat="server" Text="Giriş" BackColor="#9DBF28" 
+                            ForeColor="White" onclick="Button1_Click" Width="50px" />
+                    </li>
+                    <li class="group"><a href="UyeOl.aspx" id="register">ÜYE OLMAK İSTİYORUM</a> </li>
+                </ol>
+                </div>
+                    &nbsp;
+               
+                <asp:Panel ID="Panel1" runat="server" Height="75px">
+                  <p style="padding-left:10px">
+                    Hoşgeldiniz, <span class="red" style="color:Red; font-weight: bold;" id="kadihos" runat="server"></span><br />
+                    <span class="red" id="sepettoplamurun" runat="server" style="color: #FF0000; font-weight: bold; text-decoration: underline"></span> adet ürün bulunmaktadır</p>
+                    <p style="padding-left:10px">
+                        <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click" 
+                            ForeColor="Red" Font-Size="Small">Sepetim</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Red" 
+                            onclick="LinkButton1_Click" Font-Size="Small">Çıkış</asp:LinkButton>
+                    </p>
+                </asp:Panel>
+            </div>
+            <div class="box">
+                <h3 class="left">
+                    HAKKIMIZDA</h3>
+                <ul class="nav">
+                    <li><a href="#hakkimizda/urunlerimiz-hakkinda">Ürünlerimiz Hakkında</a></li>
+                    <li><a href="NasilUyeOlurum.aspx">Site üyelik ve yasal sorumluluklar</a></li>
+                    <li><a href="UrunIadeHakkinda.aspx">Ürün iade ve satış iptali</a></li>
+                    <li><a href="Gizlilik.aspx">Gizlilik ve üyelik şartları</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3 class="left">
+                    KAMPANYALAR</h3>
+                <img src="images/kampanyalar.jpg" />
+            </div>
+        </div>
+        <div id="push" class="group">
+        </div>
+    </div>
+    <div id="mastfoot" class="group">
+        <p id="disclaimer">
+            Bu sayfa en iyi Firefox ile görüntülenir.</p>
+        <p id="copyright">
+            Design By <span class="author">Ayla CEYLAN</span></p>
+    </div>
+    </form>
+</body>
+</html>
